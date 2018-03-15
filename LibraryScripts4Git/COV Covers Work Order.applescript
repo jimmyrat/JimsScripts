@@ -63,7 +63,7 @@ end tell
 if WorkStage is "Print" then
 	tell application "System Events"
 		try
-			if not (exists folder PrintShopFolder) then tell me to mount volume "smb://gjayne:jods@192.168.0.160/Desktop/"
+			if not (exists folder PrintShopFolder) then tell me to mount volume "smb://user:pword@192.168.0.160/Desktop/"
 		end try
 		try
 			make folder in folder PrintShopFolder with properties {name:((ClosingDate & " Covers") as text)}
@@ -76,7 +76,7 @@ repeat with CodeCounter from (count of items of ShowCodeList) to 1 by -1
 	
 	with timeout of 1800 seconds
 		
-		tell me to set ShowCode to Çevent SATIUPPEÈ (text 1 through 4 of item CodeCounter of ShowCodeList)
+		tell me to set ShowCode to Ã‡event SATIUPPEÃˆ (text 1 through 4 of item CodeCounter of ShowCodeList)
 		tell application "System Events"
 			try
 				set NewFilePath to (folder 1 of folder CoverPath whose name of it contains ShowCode)
@@ -381,7 +381,7 @@ script DoStuff
 	
 	if ((weekday of InputDate) as text) is "Wednesday" then
 		
-		set CurrentUser to Çevent SATIUPPEÈ (characters 1 through -2 of (last word of (path to home folder as text) & ".") as text)
+		set CurrentUser to Ã‡event SATIUPPEÃˆ (characters 1 through -2 of (last word of (path to home folder as text) & ".") as text)
 		set ServerShowPath to "MAC_SERVER:SHOW FILES:"
 		set CDDay to day of InputDate as text
 		if CDDay as integer < 10 then set CDDay to "0" & CDDay as text
